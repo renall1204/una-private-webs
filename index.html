@@ -1,337 +1,70 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our 1.5 Years Journey</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-    <style>
-        /* General Styles */
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ffe4e1, #ffb6c1);
-            color: #333;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        /* Carousel Styles */
-        .carousel {
-            width: 40%; /* Restore the width for landing */
-            max-width: 220px; /* Restore max width for landing */
-            aspect-ratio: 9 / 16;
-            margin: 0 auto 20px;
-            border-radius: 15px; /* Rounded corners */
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-            position: relative;
-        }
-
-        .carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-        }
-
-        .carousel img.active {
-            opacity: 1;
-        }
-
-        /* Landing Section Styles */
-        .landing {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .landing h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            margin: 10px 0;
-            color: #d45a5a;
-            background: rgba(255, 182, 193, 0.8);
-            padding: 10px 25px;
-            border-radius: 20px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .landing p {
-            font-size: 1.2em;
-            margin: 15px;
-            background: rgba(255, 182, 193, 0.8);
-            padding: 15px 20px;
-            border-radius: 15px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-            line-height: 1.5;
-        }
-
-        .landing button {
-            padding: 12px 30px;
-            font-size: 1.1em;
-            color: white;
-            background-color: #f77e7e;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s;
-        }
-
-        .landing button:hover {
-            background-color: #e15d5d;
-            transform: scale(1.05);
-        }
-
-        /* Main Content Styles */
-        .main-content {
-            display: none;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .special-moment {
-            display: none; /* Hidden by default */
-            margin: 30px auto;
-            max-width: 800px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            animation: fadeIn 0.8s ease-in-out;
-        }
-
-        .special-moment h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #d45a5a;
-        }
-
-        .special-moment p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .reveal-button {
-            padding: 10px 25px;
-            font-size: 1em;
-            color: white;
-            background-color: #f77e7e;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            margin: 10px auto;
-            display: inline-block;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .reveal-button:hover {
-            background-color: #e15d5d;
-            transform: scale(1.05);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 90%;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .modal-content p {
-            font-size: 1.2em;
-            color: #555;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .close-modal {
-            padding: 10px 25px;
-            font-size: 1em;
-            color: white;
-            background-color: #f77e7e;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease-in-out;
-        }
-
-        .close-modal:hover {
-            background-color: #e15d5d;
-            transform: scale(1.05);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Love Story</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Landing Section -->
-    <div class="landing" id="landing">
-        <!-- Image Carousel for Landing -->
-        <div class="carousel" id="landingCarousel">
-            <img src="una1.JPG" alt="Image 1" class="active">
-            <img src="una2.JPG" alt="Image 2">
-            <img src="una3.JPG" alt="Image 2">
-            <img src="una4.JPG" alt="Image 2">
-            <img src="una5.JPG" alt="Image 2">
-            <img src="una6.JPG" alt="Image 2">
-            <img src="una7.JPG" alt="Image 2">
-            <img src="una8.JPG" alt="Image 2">
-            <img src="una9.JPG" alt="Image 2">
-            <img src="una10.JPG" alt="Image 2">
-        </div>
-        <h1>Hi Una! -♡´-</h1>
-        <p>It's been almost 2 years since our relationship started. I made something special as a reminder of how far we've become.</p>
-        <button onclick="startJourney()"><b>Are you ready? ⸜(｡˃ ᵕ ˂ )⸝♡</b></button>
+  <div class="container">
+    <header>
+      <h1>💖 Our Love Story 💖</h1>
+      <p>Welcome to our little love nest! 🌸 Let me take you on our journey. 🚀</p>
+    </header>
+    <main>
+      <section class="about">
+        <h2>About Us</h2>
+        <img src="fm3.jpg" alt="Us together" class="photo">
+        <p>
+          Hello! I'm <strong>Ren</strong> and this is my lovely <strong>Rere!</strong>
+          We've been sharing smiles, dreams, tears, and love since <span class="highlight">28/04/2023</span>. 
+          <br>Just so you guys know this is from my (Ren) point of view yeah 
+        </p>
+      </section>
+      <section class="interactive">
+        <h2>Interactive Story</h2>
+        <button onclick="showModal('meeting')">How did we meet? 💌</button>
+        <button onclick="showModal('first_date')">Our first date 🌸</button>
+        <button onclick="showModal('milestones')">Our milestones 🌟</button>
+      
+        <!-- Modal Overlay -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
+
+<!-- Modal -->
+<div id="story-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modal-title"></h3>
+    <div id="modal-carousel" class="carousel">
+      <img id="carousel-image" src="" alt="Story Image" />
+      <p id="carousel-caption"></p>
     </div>
+    <button id="prev-btn" onclick="prevImage()">◀</button>
+    <button id="next-btn" onclick="nextImage()">▶</button>
+  </div>
+</div>
 
-    <!-- Main Content -->
-    <div class="main-content" id="main-content">
-        <h2 style="font-family: 'Playfair Display', serif; color: #d45a5a; font-size: 2em;">Our 1.5 Years of Relationship Journey</h2>
-        <div class="special-moment" id="moment1">
-            <h3>Our First Meet - 17/05/2023</h3>
-            <div class="carousel">
-                <img src="fm1.JPG" alt="First Meeting" class="active">
-                <img src="fm2.JPG" alt="Another Image">
-                <img src="fm3.JPG" alt="Another Image">
-                <img src="fm4.JPG" alt="Another Image">
-                <img src="fm5.JPG" alt="Another Image">
-            </div>
-            <p>Pertama kali kita ketemu! Aku jemput kamu di stasiun gambir. Seru banget campur deg degan ya!</p>
+      </section>           
+      <section class="unique-photos-section">
+        <h2>Ladies and Gentlemen, Her 💖</h2>
+        <div class="unique-carousel-wrapper">
+          <div class="unique-carousel">
+            <img src="una1.jpg" alt="Memory 1" class="unique-carousel-photo">
+            <img src="una3.jpg" alt="Memory 3" class="unique-carousel-photo">
+            <img src="una4.jpg" alt="Memory 4" class="unique-carousel-photo">
+            <img src="una10.jpg" alt="Memory 2" class="unique-carousel-photo">
+            <img src="una6.jpg" alt="Memory 6" class="unique-carousel-photo">
+          </div>
         </div>
-        <div class="special-moment" id="moment2">
-            <h3>Our First Aquarium Date - 20/05/2023</h3>
-            <div class="carousel">
-                <img src="aq1.JPG" alt="Road Trip 1" class="active">
-                <img src="aq2.JPG" alt="Road Trip 2">
-                <img src="aq3.JPG" alt="Road Trip 2">
-                <img src="aq4.JPG" alt="Road Trip 2">
-            </div>
-            <p>Aquarium Date yang kamu pengenin banget akhirnya kesampaian nih di Jakarta hehe. Ga sengaja malah ketemu temen kamu ya? Jujur aku disini kaget kamu berani sama uler piton segede gitu T_T</p>
-        </div>
-        <div class="special-moment" id="moment3">
-            <h3>Our First Road Trip - 29/08/2024</h3>
-            <div class="carousel">
-                <img src="rt1" alt="Road Trip 1" class="active">
-                <img src="rt2.JPG" alt="Road Trip 2">
-                <img src="rt3.JPG" alt="Road Trip 2">
-                <img src="rt4.JPG" alt="Road Trip 2">
-                <img src="rt5.JPG" alt="Road Trip 2">
-                <img src="rt6.JPG" alt="Road Trip 2">
-                <img src="rt7.JPG" alt="Road Trip 2">
-                <img src="rt8.JPG" alt="Road Trip 2">
-            </div>
-            <p>Roadtrip pertama kita Cilacap - Bandung (300km++!) Hebatnya kamu gak tidur sama sekali di perjalanan. Gokil!</p>
-        </div>
-        <button class="reveal-button" onclick="revealNextMoment()">Press Me to Unlock Memories! ♡</button>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <p>Sorry for now I can only add these :( but I will update it regularly. Please visit me once in a while yea! <3</p>
-            <button class="close-modal" onclick="closeModal()">Close</button>
-        </div>
-    </div>
-
-    <script>
-        let currentMomentIndex = 0;
-
-        function startJourney() {
-            const landing = document.getElementById('landing');
-            const mainContent = document.getElementById('main-content');
-            landing.style.transition = 'opacity 0.5s';
-            landing.style.opacity = '0';
-            setTimeout(() => {
-                landing.style.display = 'none';
-                mainContent.style.display = 'block';
-            }, 500);
-        }
-
-        function revealNextMoment() {
-            const moments = document.querySelectorAll('.special-moment');
-            const modal = document.getElementById('modal');
-            if (currentMomentIndex < moments.length) {
-                moments[currentMomentIndex].style.display = 'block';
-                currentMomentIndex++;
-            } else {
-                modal.style.display = 'flex';
-            }
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('modal');
-            modal.style.display = 'none';
-        }
-
-        // Landing Carousel Logic
-        const landingCarouselImages = document.querySelectorAll('#landingCarousel img');
-        let landingIndex = 0;
-
-        function showNextLandingImage() {
-            landingCarouselImages[landingIndex].classList.remove('active');
-            landingIndex = (landingIndex + 1) % landingCarouselImages.length;
-            landingCarouselImages[landingIndex].classList.add('active');
-        }
-
-        setInterval(showNextLandingImage, 3000);
-
-        // Special Moments Carousel Logic
-        function startCarousel(carouselId) {
-            const carousel = document.querySelectorAll(`#${carouselId} img`);
-            let index = 0;
-
-            setInterval(() => {
-                carousel[index].classList.remove('active');
-                index = (index + 1) % carousel.length;
-                carousel[index].classList.add('active');
-            }, 3000);
-        }
-
-        // Start carousels for special moments
-        startCarousel('moment1');
-        startCarousel('moment2');
-        startCarousel('moment3');
-    </script>
+      </section>
+      
+    </main>
+    <footer>
+      <p>💌 Made with endless love by <strong>Ren</strong> 💖</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
