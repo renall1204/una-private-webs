@@ -1,0 +1,412 @@
+/* General Styles */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fff0f5;
+    margin: 0;
+    padding: 0;
+    color: #444;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Header */
+  header {
+    background-color: #ffe6f7;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #ff85a1;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Sections */
+  main section {
+    margin: 20px 0;
+  }
+  
+  /* About Section */
+  .about {
+    background-color: #fff3f7;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .about .photo {
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 10px 0;
+  }
+  
+  .about p .highlight {
+    font-weight: bold;
+    color: #ff85a1;
+  }
+  
+  /* Interactive Section */
+  .interactive {
+    background-color: #ffe6f7;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  button {
+    background-color: #ff85a1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  button:hover {
+    background-color: #ff4f79;
+  }
+  
+  /* Modal Overlay */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    z-index: 999;
+    transition: opacity 0.4s ease;
+  }
+  
+  .modal-overlay.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    z-index: 1000;
+    transition: bottom 0.4s ease;
+  }
+  
+  .modal.show {
+    display: block;
+    bottom: 7%;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* Unique Photos Section */
+.unique-photos-section {
+  background-color: #fff3f7;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+/* Unique Carousel Wrapper */
+.unique-carousel-wrapper {
+  width: 100%;
+  overflow: hidden; /* Hide overflowing content */
+  position: relative;
+  margin: 20px 0;
+}
+
+/* Unique Carousel */
+.unique-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+  width: 100%; /* Ensure it takes the full width of the wrapper */
+  box-sizing: border-box; /* Include padding and borders in width calculation */
+}
+
+/* Unique Individual Photos */
+.unique-carousel-photo {
+  flex-shrink: 0;
+  width: 100%; /* Ensure one image fully occupies the viewport */
+  object-fit: cover; /* Make sure the image fills its container */
+  border-radius: 10px;
+  margin: 0; /* Remove unnecessary margins */
+  max-height: 300px;
+}
+
+/* Unique Carousel Navigation Buttons */
+.unique-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ff85a1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.unique-prev-btn {
+  left: 10px;
+}
+
+.unique-next-btn {
+  right: 10px;
+}
+
+.unique-carousel-btn:hover {
+  background-color: #ff4f79;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .unique-carousel-photo {
+    width: 100%; /* On mobile, each image occupies the full viewport */
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .unique-carousel-photo {
+    max-height: 150px;
+  }
+
+  .unique-carousel-btn {
+    padding: 6px 10px; /* Smaller buttons for smaller screens */
+  }
+}
+/* Unique Photos Section */
+.unique-photos-section {
+    background-color: #fff3f7;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 30px 0;
+    text-align: center;
+  }
+  
+  /* Unique Carousel Wrapper */
+  .unique-carousel-wrapper {
+    width: 100%;
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  /* Unique Carousel */
+  .unique-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+    width: 100%; /* Ensure it takes the full width of the wrapper */
+    box-sizing: border-box; /* Include padding and borders in width calculation */
+  }
+  
+  /* Unique Individual Photos */
+  .unique-carousel-photo {
+    flex-shrink: 0;
+    width: 100%; /* Ensure one image fully occupies the viewport */
+    object-fit: cover; /* Make sure the image fills its container */
+    border-radius: 10px;
+    margin: 0; /* Remove unnecessary margins */
+    max-height: 300px;
+  }
+  
+  /* Unique Carousel Navigation Buttons */
+  .unique-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff85a1;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .unique-prev-btn {
+    left: 10px;
+  }
+  
+  .unique-next-btn {
+    right: 10px;
+  }
+  
+  .unique-carousel-btn:hover {
+    background-color: #ff4f79;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .unique-carousel-photo {
+      width: 100%; /* On mobile, each image occupies the full viewport */
+      max-height: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .unique-carousel-photo {
+      max-height: 150px;
+    }
+  
+    .unique-carousel-btn {
+      padding: 6px 10px; /* Smaller buttons for smaller screens */
+    }
+  }
+  
+  
+  /* Carousel */
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carousel img {
+    max-width: 100%;
+    max-height: 40vh; /* Limit height to 60% of the viewport */
+    border-radius: 10px;
+    margin: 10px 0;
+    object-fit: cover; /* Ensure images scale properly without distortion */
+  }
+  
+  .carousel p {
+    font-size: 0.8rem;
+    color: #444;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  /* Buttons for Carousel Navigation */
+  button#prev-btn,
+  button#next-btn {
+    background-color: #ff85a1;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  button#prev-btn:hover,
+  button#next-btn:hover {
+    background-color: #ff4f79;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .carousel img {
+      max-width: 90%; /* Further limit image width for smaller screens */
+      max-height: 50vh; /* Reduce height to avoid overflow */
+    }
+
+    .modal.show {
+        display: block;
+        bottom: 17%;
+      }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel img {
+      max-width: 85%; /* Ensure images fit within modal for mobile screens */
+      max-height: 40vh; /* Further restrict height for small screens */
+    }
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    header p {
+      font-size: 1rem;
+    }
+  
+    .about .photo {
+      max-width: 150px;
+    }
+  
+    button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  
+    .modal {
+      bottom: 10%;
+      padding: 15px;
+    }
+  
+    .carousel img {
+      max-width: 90%; /* Ensure carousel images fit smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    header p {
+      font-size: 0.9rem;
+    }
+  
+    button {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  
+    .modal {
+      bottom: 5%; /* Adjust bottom positioning for smaller screens */
+      padding: 10px;
+    }
+  
+    .carousel img {
+      max-width: 85%;
+    }
+  }
+  
